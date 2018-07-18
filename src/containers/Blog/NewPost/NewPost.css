@@ -1,9 +1,10 @@
 .NewPost {
-    width: 80%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     text-align: center;
+    padding: 0;
 }
 
 .NewPost label {
