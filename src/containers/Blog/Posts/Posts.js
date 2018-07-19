@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import axios from "../../../axios";
-import FullPost from '../../Blog/FullPost/FullPost';
-import NewPost from '../../Blog/NewPost/NewPost';
+
 import Post from '../../../components/Post/Post';
-import classes from './Posts.css';
+import Classes from './Posts.css';
+
 
 import {Link} from 'react-router-dom';
-import {Route} from'react-router-dom';
+
 
 
 class Posts extends Component {
@@ -52,13 +52,16 @@ class Posts extends Component {
         let posts = <h style={{textAlign: 'center' }}><strong>wrong!</strong></h>;
         if(!this.state.error){
             posts = this.state.posts.map(post => {
-                return (<Link to={'/Posts/' + post.id} key={post.id}>
+                return (
+
+                    <Link to={'/'+ post.id} key={post.id}>
                     <Post
 
                         title={post.title}
                         author={post.author}
                         clicked={() => this.postSelectedHandler(post.id)} />
-                </Link>);
+                </Link>
+                    );
             });
         }
         return(
@@ -71,7 +74,6 @@ class Posts extends Component {
                 {/*<section>*/}
                     {/*<NewPost />*/}
                 {/*</section>*/}
-                <Route path={this.props.match.url + '/:id'} exact component={FullPost} />
 
             </section>
 
